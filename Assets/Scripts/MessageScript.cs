@@ -20,5 +20,7 @@ public class MessageScript : MonoBehaviour
     	var newMessage = Instantiate(chatMessagePrefab, new Vector3(0, 0, 0), Quaternion.identity);
     	newMessage.transform.SetParent(chatContainer.transform, false);
     	newMessage.transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText(message);
+        newMessage.transform.parent.parent.parent.gameObject.GetComponent<ScrollRect>().verticalNormalizedPosition = 0;
+        newMessage.transform.parent.parent.parent.gameObject.GetComponent<ScrollRect>().verticalNormalizedPosition = -6.5E-2F;
     }
 }
