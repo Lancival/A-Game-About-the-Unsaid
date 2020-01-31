@@ -21,11 +21,18 @@ public class MessageScript : MonoBehaviour
         GameObject.Find("Scroll View").GetComponent<ScrollRect>().verticalNormalizedPosition = -6.5E-2F; // Magic number obtained through testing
     }
 
+    // Reset color of button
+    public void ResetButtonColor() {
+        button.enabled = false;
+        button.enabled = true;
+    }
+
     // Add a new chat message
     public void AddMessage() {
     	var newMessage = Instantiate(chatMessagePrefab, new Vector3(0, 0, 0), Quaternion.identity); // Create new chat message
     	newMessage.transform.SetParent(chatContainer.transform, false); // Place message inside chat container
     	newMessage.transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText(message); // Change text to dialogue
         ScrollToBottom();
+        ResetButtonColor();
     }
 }
