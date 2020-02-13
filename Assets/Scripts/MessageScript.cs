@@ -9,8 +9,10 @@ public class MessageScript : MonoBehaviour {
     [SerializeField] private Button button; // Button which will add a message when clicked
     [SerializeField] private GameObject chatMessagePrefab; // Chat message prefab to be instantiated
 
-    private float SCROLLCONSTANT = -6.5E-2F; // Magic number obtained through testing
-    private int MESSAGEPADDING = 200; // How much to left or right pad a message
+    private float SCROLL_CONSTANT = -7E-1F; // Magic number obtained through testing
+    private int MESSAGE_PADDING = 200; // How much to left or right pad a message
+    private Color32 PLAYER_COLOR = new Color32(254, 215, 177, 255); // Light orange color
+    private Color32 NPC_COLOR = new Color32(173, 216, 230, 255); // Light blue color
 
     void Start() {
     	button.onClick.AddListener(ChooseOption); // Allows the button to activate the AddMessage function when clicked
@@ -18,7 +20,7 @@ public class MessageScript : MonoBehaviour {
 
     // Scroll the chat to the bottom to view the new chat message
     private void ScrollToBottom() {
-        GameObject.Find("Scroll View").GetComponent<ScrollRect>().verticalNormalizedPosition = SCROLLCONSTANT;
+        GameObject.Find("Scroll View").GetComponent<ScrollRect>().verticalNormalizedPosition = SCROLL_CONSTANT;
     }
 
     // Reset color of button
@@ -33,11 +35,16 @@ public class MessageScript : MonoBehaviour {
     	newMessage.transform.SetParent(GameObject.Find("Content").transform, false); // Place message inside chat container
     	newMessage.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().SetText(message); // Change text to dialogue
 
-        // Pad message on the left or right, depending on whether message was sent by player or NPC
-        if (player == true)
-            newMessage.GetComponent<VerticalLayoutGroup>().padding.left = MESSAGEPADDING;
-        else
-            newMessage.GetComponent<VerticalLayoutGroup>().padding.right = MESSAGEPADDING;
+        // Format message depending on whether message was sent by player or NPC
+        if (player == true) {
+            newMessage.GetComponent<VerticalLayoutGroup>().padding.left = MESSAGE_PADDING;
+            newMessage.transform.GetChild(0).GetComponent<Image>().color = PLAYER_COLOR;
+        }
+        else {
+            newMessage.GetComponent<VerticalLayoutGroup>().padding.right = MESSAGE_PADDING;
+            newMessage.transform.GetChild(0).GetComponent<Image>().color = NPC_COLOR;
+        }
+
         ScrollToBottom();
         //ResetButtonColor();
     }
