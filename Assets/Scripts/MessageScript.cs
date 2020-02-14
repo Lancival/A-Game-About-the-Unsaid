@@ -2,38 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 
 public class MessageScript : MonoBehaviour {
 
-    [SerializeField] private Button button; // Button which will add a message when clicked
     [SerializeField] private GameObject chatMessagePrefab; // Chat message prefab to be instantiated
+    [SerializeField] private GameObject chatOptionPrefab; // Chat option prefab to be instantiated
+    [SerializeField] private TextAsset file; // File which contains dialogue in semicolon separated value format
+    private List<Dialogue> nodes; // Dialogue extracted from the file
+    private int curr; // ID # of current dialogue node
 
-    private float SCROLL_CONSTANT = -7E-1F; // Magic number obtained through testing
-    private int MESSAGE_PADDING = 200; // How much to left or right pad a message
+    private const int MESSAGE_PADDING = 200; // How much to left or right pad a message
+
     private Color32 PLAYER_COLOR = new Color32(254, 215, 177, 255); // Light orange color
     private Color32 NPC_COLOR = new Color32(173, 216, 230, 255); // Light blue color
 
     void Start() {
-    	button.onClick.AddListener(ChooseOption); // Allows the button to activate the AddMessage function when clicked
+        if (chatMessagePrefab == null) Debug.Log("Please assign the chat message prefab to MessageScript!");
+        nodes = Dialogue.extract(file.text);
+        curr = 0;
+
+        StartCoroutine(AddNPCMessage());
     }
 
-    // Scroll the chat to the bottom to view the new chat message
-    private void ScrollToBottom() {
-        GameObject.Find("Scroll View").GetComponent<ScrollRect>().verticalNormalizedPosition = SCROLL_CONSTANT;
-    }
-
-    // Reset color of button
-    private void ResetButtonColor() {
-        button.enabled = false;
-        button.enabled = true;
+    private IEnumerator ScrollToBottom() {
+        yield return new WaitForEndOfFrame(); // Because Unity is stupid, must wait one frame before scrolling to bottom
+        GameObject.Find("Scroll View").GetComponent<ScrollRect>().verticalNormalizedPosition = 0F;
     }
 
     // Add a new chat message
     private void AddMessage(string message, bool player) {
-    	var newMessage = Instantiate(chatMessagePrefab, new Vector3(0, 0, 0), Quaternion.identity); // Create new chat message
-    	newMessage.transform.SetParent(GameObject.Find("Content").transform, false); // Place message inside chat container
-    	newMessage.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().SetText(message); // Change text to dialogue
+        // Create new message and place it in the chat container
+    	var newMessage = Instantiate(chatMessagePrefab, new Vector3(0, 0, 0), Quaternion.identity);
+    	newMessage.transform.SetParent(GameObject.Find("Content").transform, false);
+    	newMessage.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().SetText(message);
 
         // Format message depending on whether message was sent by player or NPC
         if (player == true) {
@@ -45,14 +48,56 @@ public class MessageScript : MonoBehaviour {
             newMessage.transform.GetChild(0).GetComponent<Image>().color = NPC_COLOR;
         }
 
-        ScrollToBottom();
-        //ResetButtonColor();
+        StartCoroutine(ScrollToBottom());
     }
 
-    // Handle player's choice of chat message to send
-    public void ChooseOption() {
-        AddMessage(button.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text, true); // Send player message
-        // Change dialogue options to new options
-        AddMessage("This is an NPC response placeholder!", false); // Send NPC "response message"
+    // Send a series of 1 or more NPC messages, with a delay of 2 seconds per message
+    private IEnumerator AddNPCMessage() {
+        gameObject.transform.GetChild(0).gameObject.SetActive(true); // Add waiting for messages placeholder
+        // Delete all other buttons
+        foreach (Transform child in gameObject.transform)
+            if (child.gameObject.name != "Wait")
+                GameObject.Destroy(child.gameObject);
+
+        while (curr != -1 && nodes[nodes[curr].getResponseID()[0]].getSpeakerID() != 0) {
+            yield return new WaitForSeconds(nodes[curr].getText().Length / 100 + 1); // Use length of previous message (more convenient for reader)? Or the next message (more realistic)?
+            AddMessage(nodes[curr].getText(), false);
+            curr = nodes[curr].getResponseID()[0];
+        }
+        if (nodes[curr].getResponseID()[0] != 0) {
+            yield return new WaitForSeconds(2);
+            AddMessage(nodes[curr].getText(), false);
+        }
+
+        AddOptions();
+    }
+
+    private void ChooseOption() {
+        Button button = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
+        AddMessage(button.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text, true);
+        curr = nodes[curr].getResponseID()[button.transform.GetSiblingIndex() - 1];
+
+        if (nodes[curr].getResponseID()[0] == 0)
+            AddOptions();
+        else {
+            curr = nodes[curr].getResponseID()[0];
+            StartCoroutine(AddNPCMessage());
+        }
+    }
+
+    private void AddOption(string message, int index) {
+        // Create new chat option and place it in the dialogue option box
+        var newOption = Instantiate(chatOptionPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        newOption.transform.SetParent(this.gameObject.transform, false);
+        newOption.transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText(message);
+
+        // Make button add message on click
+        newOption.transform.GetComponent<Button>().onClick.AddListener(ChooseOption);
+    }
+
+    private void AddOptions() {
+        gameObject.transform.GetChild(0).gameObject.SetActive(false); // Disable waiting for messages placeholder
+        foreach (int option in nodes[curr].getResponseID())
+            AddOption(nodes[option].getText(), option);
     }
 }

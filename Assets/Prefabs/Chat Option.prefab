@@ -170,7 +170,6 @@ GameObject:
   - component: {fileID: 609438240189927866}
   - component: {fileID: 609438240189927867}
   - component: {fileID: -2405622151347487571}
-  - component: {fileID: 7986284402352687968}
   m_Layer: 5
   m_Name: Chat Option
   m_TagString: Untagged
@@ -290,10 +289,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 15
-    m_Right: 15
-    m_Top: 15
-    m_Bottom: 15
+    m_Left: 20
+    m_Right: 20
+    m_Top: 20
+    m_Bottom: 20
   m_ChildAlignment: 0
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
@@ -302,18 +301,3 @@ MonoBehaviour:
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
---- !u!114 &7986284402352687968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 609438240189927865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 294b86a55aa6d43eeb4f5cef796b15c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 609438240189927867}
-  chatMessagePrefab: {fileID: 715802738936920209, guid: e68b7b4b92ed34ab4a9d9b4d9113b06a,
-    type: 3}
