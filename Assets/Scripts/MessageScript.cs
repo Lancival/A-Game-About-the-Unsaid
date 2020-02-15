@@ -51,7 +51,7 @@ public class MessageScript : MonoBehaviour {
         StartCoroutine(ScrollToBottom());
     }
 
-    // Send a series of 1 or more NPC messages, with a delay of 2 seconds per message
+    // Send a series of 1 or more NPC messages, with a delay between each NPC message
     private IEnumerator AddNPCMessage() {
         gameObject.transform.GetChild(0).gameObject.SetActive(true); // Add waiting for messages placeholder
         // Delete all other buttons
@@ -59,8 +59,9 @@ public class MessageScript : MonoBehaviour {
             if (child.gameObject.name != "Wait")
                 GameObject.Destroy(child.gameObject);
 
-        while (curr != -1 && nodes[nodes[curr].getResponseID()[0]].getSpeakerID() != 0) {
-            yield return new WaitForSeconds(nodes[curr].getText().Length / 100 + 1); // Use length of previous message (more convenient for reader)? Or the next message (more realistic)?
+        while (nodes[nodes[curr].getResponseID()[0]].getSpeakerID() > 0) {
+        	yield return new WaitForSeconds(1); // Wait for 1 second between message
+            //yield return new WaitForSeconds(nodes[curr].getText().Length / 100 + 1); // Use length of previous message (more convenient for reader)? Or the next message (more realistic)?
             AddMessage(nodes[curr].getText(), false);
             curr = nodes[curr].getResponseID()[0];
         }
@@ -79,13 +80,15 @@ public class MessageScript : MonoBehaviour {
 
         if (nodes[curr].getResponseID()[0] == 0)
             AddOptions();
+        else if (nodes[curr].getResponseID()[0] < 0)
+        	return;
         else {
             curr = nodes[curr].getResponseID()[0];
             StartCoroutine(AddNPCMessage());
         }
     }
 
-    private void AddOption(string message, int index) {
+    private void AddOption(string message) {
         // Create new chat option and place it in the dialogue option box
         var newOption = Instantiate(chatOptionPrefab, new Vector3(0, 0, 0), Quaternion.identity);
         newOption.transform.SetParent(this.gameObject.transform, false);
@@ -98,6 +101,6 @@ public class MessageScript : MonoBehaviour {
     private void AddOptions() {
         gameObject.transform.GetChild(0).gameObject.SetActive(false); // Disable waiting for messages placeholder
         foreach (int option in nodes[curr].getResponseID())
-            AddOption(nodes[option].getText(), option);
+            	AddOption(nodes[option].getText());
     }
 }

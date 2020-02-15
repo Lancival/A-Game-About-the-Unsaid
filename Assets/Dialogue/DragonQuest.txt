@@ -9,12 +9,34 @@
 8;1;As regretable as it is, Bloodfang is known as the Bane of Knights for a reason. Pursuing Bloodfang would merely be suicide. The king is disapointed, but not surprised, and you leave the next day in search of some safer adventures.;10
 9;1;The next day, you arrive at the cave. Dismounting your trusty steed, you quickly decide on a plan of action;12,13,14,15
 10;1;After fleeing the kingdom, you continue wandering the land, but never accomplish anything of note. Forever languishing in obscurity, you imagine what could have been if you had slain Bloodfang and rescued the children.;11
-11;1;Epilogue: In modern times, your name can only be found on a musuem label - in an exhibit featuring medieval weapons and armor made from the bones of the long-extinct Draconis Nobilius. Click play to try again!;19
+11;1;Epilogue: In modern times, your name can only be found on a musuem label - in an exhibit featuring medieval weapons and armor made from the bones of ancient dragons. Click play to try again, or click Continue to move on to the next story!;19,20
 12;0;You charge towards the cave, shouting a challenge at the top of your lungs.;16
 13;0;You sneak into the cave, hoping to catch the dragon while it slumbers.;17
 14;0;You try to parlay with dragon, to reach a mutually agreeable solution.;18
-15;0;You run away.;19
+15;0;You run away.;11
 16;1;Bloodfang appears before you, terrible yet majestic in his crimson scales. "What a bother. I wonder when natural selection will finally produce knights who don't charge into danger without a plan?" he rumbles. Quick as a bolt of lightening, his maw flashes forward and chomps down as he swallows you whole. A moment after your death, Bloodfang coughs and disgorges a charred but otherwise undamaged shield before crawling back into his cave.;11
 17;1;You manage to sneak into the cave without being detected, but you only find various bones strewn across the cavern floor. As you exit the cave, you come face to face with a crimson dragon. Shocked, you accidentally drop your shield. "Looks like meat's on the menu tonight after all," Bloodfang grins.;11
-18;1;You announce your presence in front of the cave and respectfully wait for Bloodfang to emerge. When the crimson dragon finally appears, yawining, you state your intention to negotiate the release of the noble children on behalf of the King of Wysteria. Bloodfang laughs, "Ahahah! A bold move, human! That's the best joke I've heard in a long long time. It's too bad I have to kill you now." Bloodfang inhales, then blasts a wave of fire at you. Within moments, you are a black mark on the ground next to a bony shield. (Author's notes: Seriously? The dragon is the BANE OF KNIGHTS and you try to negotiate with it?);11
+18;1;You announce your presence in front of the cave and respectfully wait for Bloodfang to emerge. When the crimson dragon finally appears, yawining, you state your intention to negotiate the release of the noble children on behalf of the King of Wysteria. Bloodfang laughs, "Ahahah! A bold move, human! That's the best joke I've heard in a long long time. It's too bad I have to kill you now." Bloodfang inhales, then blasts a wave of fire at you. Within moments, you are a black mark on the ground next to a bony shield.;11
 19;0;Play;1
+20;0;Continue;21
+21;1;Story 2: Death and Taxes;22
+22;1;You are a resident of Cyber-Tokyo, a futuristic city lit up by blazing neon lights and where it's always raining. For complicated historical reasons, Cyber-Tokyo is not located in modern Tokyo, but on an artifically constructed island in the Japanese archipelago.;23
+23;1;Cyber-Tokyo has always been dangerous - full of yakuza, megacorporations, and metallic roads which are slippery when wet - but that's what you signed up for when you chose the city. A week ago, however, poeple started transforming into "dragons" seemingly at random, and the city has been on lockdown ever since. Word on the net is that a shade runner accidentally released Malgen Biotech's newest invention - a nanobot swarm programmed to rewrite the genetic code of anything it comes into contact with.;24
+24;1;That's why you're here. Only you have the ability to deal with the problem. You cross the street, raindrops bouncing off the dim aura of your personal phase-shield. You enter the dark alleyway and approach a nondescript door. Silently, you enter cyberspace and inject the digital lock with a metamorphic virus, before stepping through the doorway.;25
+25;1;Inside lies what could only be described as a dragon, staring at you. Idly, you wonder how it managed to get inside - the door certainly isn't large enough. You announce your demands.;26,27,28
+26;0;You demand the dragon's surrender into custody.;31
+27;0;You demand the dragon's help in reaching the bottom of this mess.;37
+28;0;You demand that the dragon pay its taxes.;29
+29;1;"Just because you've turned into a dragon doesn't mean you don't have to pay taxes anymore," you tell it. With a grumble, the dragon reluctantly acknowledges you, and fills out his tax return form - digitally of course. You leave the dark alleyway behind, another case closed. Not even dragons can escape the reach of National Tax Agency.;39
+30;1;"We can help you," you tell the dragon. "We think we can create a cure if you just come quietly.";31
+31;1;"You think I need your pity?" the dragon roars. "Once all of my associates have ascended and become dragons, our revolution will be unstoppable!";32,33
+32;0;You continue to listen to its monologue.;34
+33;0;You interrupt the dragon's monologue and strike first.;35
+34;1;"We, the dragons, will finally rule over Cyber-Tokyo and the rest of Japan! It's already too late for you to stop all of us - your puny human minds and bodies are no match for the perfection of a dragon," it shouts triumphantly.;35
+35;1;As the dragon is busy boasting its superiority over humans, you leap forward and strike the dragon with the plasma blade build into your arm. It cuts deep - and the dragon's eyes widen in surprise as it realizes that you are not human - you are the latest military-grade android developed by Horizon Dynamics.;36
+36;1;The ensuing fight is short but brutal, and you are forced to use every trick in the book, or rather your programming. But in the end, it wasn't enough. Pieces of your body lie scattered across the street, with exposed wires fizzling in the rain. As raindrops patter across your chest, your phase-shield having fizzled out after absorbing the first blast of dragon-plasma, you stare up at the stormy sky. Jaws close with a crunching sound just as you finish uploading the last of the data from the battle - the next iteration will need it if they are going to stop the dragons.;39
+37;1;"Sure, I'll help you." the dragon grins. Suddenly, the dragon lunges forward and bites you. As the immediate jolt of pain and your surprise fade, you suddenly feel wrong. Very very wrong. An immense pain flares up - it feels like your body is tearing itself apart - and you black out.;38
+38;1;When you wake up, you are in lying on the roof of a skyscraper in an unfamiliar part of Cyber-Tokyo. Looking down, you see claws where your hands should be. "Welcome to the were-dragon society, my friend.";39
+39;1;The end! Click Play to play this story again, or click continue to play the next story!;40,41
+40;0;Play;21
+41;0;Continue;-1
