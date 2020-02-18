@@ -1,0 +1,1 @@
+1;1;This is a placeholder dialogue message. Please replace this file with a file that contains the finalized dialogue. The file should follow the same format as this one - that is each node should include its ID, the ID of the speaker, the message itself, and the ID's of the message(s) that directly follow it. These data fields should be separated by semi-colons.;-1

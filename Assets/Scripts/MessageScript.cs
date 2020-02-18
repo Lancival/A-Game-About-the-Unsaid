@@ -19,7 +19,8 @@ public class MessageScript : MonoBehaviour {
     private Color32 NPC_COLOR = new Color32(173, 216, 230, 255); // Light blue color
 
     void Start() {
-        if (chatMessagePrefab == null) Debug.Log("Please assign the chat message prefab to MessageScript!");
+        if (chatMessagePrefab == null) 
+            Debug.Log("Please assign the chat message prefab to MessageScript!");
         nodes = Dialogue.extract(file.text);
         curr = 0;
 
