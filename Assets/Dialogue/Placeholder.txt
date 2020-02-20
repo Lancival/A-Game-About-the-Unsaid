@@ -1,1 +1,4 @@
-1;1;This is a placeholder dialogue message. Please replace this file with a file that contains the finalized dialogue. The file should follow the same format as this one - that is each node should include its ID, the ID of the speaker, the message itself, and the ID's of the message(s) that directly follow it. These data fields should be separated by semi-colons.;-1
+0;1;This is a placeholder dialogue message. Please replace this file with a file that contains the finalized dialogue. The file should follow the same format as this one - that is each node should include its ID, the ID of the speaker, the message itself, and the ID's of the message(s) that directly follow it. These data fields should be separated by semi-colons.;1,2
+1;0;Placeholder Player Option 1!;3
+2;0;Placeholder Player Option 2!;3
+3;1;Final Placeholder Dialogue;-1
