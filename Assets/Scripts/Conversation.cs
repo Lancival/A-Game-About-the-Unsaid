@@ -14,7 +14,7 @@ public class Conversation : MonoBehaviour {
 	[SerializeField] private GameObject optionPrefab; // Button w/ dialogue option to be instantiated
 	private List<Dialogue> nodes; // Extracted dialogue from source file
 	private int curr; // Number of current dialogue node
-	private float dialogueSpeed = 0.04f; // time interval in seconds between characters being printed on screen
+	private float dialogueSpeed = 0.03f; // time interval in seconds between characters being printed on screen
 
 	private TextMeshProUGUI dialogue;
 	private TextMeshProUGUI character;
@@ -43,20 +43,22 @@ public class Conversation : MonoBehaviour {
     	// Finish printing current dialogue if return key is pressed
     	// TODO: Change this so it will work on other (keyboardless) platforms
 
-    	if (Input.GetKeyDown(KeyCode.Return) == true && printing) {
-    		printing = false;
-    		dialogue.text = nodes[curr].getText();
-    	}
-    	else if (Input.GetKeyDown(KeyCode.Return) == true && nodes[curr].getResponseID()[0] >= 0) {
-    		if (nodes[nodes[curr].getResponseID()[0]].getSpeakerID() == 0) {
-    			if (gameObject.transform.GetChild(1).GetChild(1).childCount <= 1)
-    				ShowDialogueOptions();
-    		}
-    		else {
-    			curr = nodes[curr].getResponseID()[0];
-    			Response();
-    		}
-    	}
+        if (!Settings.PAUSED) {
+        	if (Input.GetKeyDown(KeyCode.Return) == true && printing) {
+        		printing = false;
+        		dialogue.text = nodes[curr].getText();
+        	}
+        	else if (Input.GetKeyDown(KeyCode.Return) == true && nodes[curr].getResponseID()[0] >= 0) {
+        		if (nodes[nodes[curr].getResponseID()[0]].getSpeakerID() == 0) {
+        			if (gameObject.transform.GetChild(1).GetChild(1).childCount <= 1)
+        				ShowDialogueOptions();
+        		}
+        		else {
+        			curr = nodes[curr].getResponseID()[0];
+        			Response();
+        		}
+        	}
+        }
     }
 
     private void ShowDialogueOptions() {
@@ -64,8 +66,7 @@ public class Conversation : MonoBehaviour {
     	List<int> responses = nodes[curr].getResponseID();
     	ChangeName(CharacterInfo.names[nodes[responses[0]].getSpeakerID()]);
     	foreach (int responseID in responses) {
-    		var response = Instantiate(optionPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-    		response.transform.SetParent(gameObject.transform.GetChild(1).GetChild(1), false);
+    		var response = Instantiate(optionPrefab, gameObject.transform.GetChild(1).GetChild(1));
 			response.transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText(nodes[responseID].getText());
 			response.transform.GetComponent<Button>().onClick.AddListener(ChooseOption);
     	}
@@ -97,7 +98,8 @@ public class Conversation : MonoBehaviour {
     	for (int i = 0; i < speech.Length; i++) {
     		if (!printing)
     			break;
-    		dialogue.text += speech[i];
+            if (!Settings.PAUSED)
+    		    dialogue.text += speech[i];
     		yield return new WaitForSeconds(dialogueSpeed);
     	}
     }

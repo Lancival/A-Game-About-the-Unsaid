@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
+// TODO: Change script to stop all action when game is paused
+
 public class MessageScript : MonoBehaviour {
 
     [SerializeField] private GameObject chatMessagePrefab; // Chat message prefab to be instantiated
@@ -35,8 +37,7 @@ public class MessageScript : MonoBehaviour {
     // Add a new chat message
     private void AddMessage(string message, bool player) {
         // Create new message and place it in the chat container
-    	var newMessage = Instantiate(chatMessagePrefab, new Vector3(0, 0, 0), Quaternion.identity);
-    	newMessage.transform.SetParent(GameObject.Find("Content").transform, false);
+    	var newMessage = Instantiate(chatMessagePrefab, GameObject.Find("Content").transform);
     	newMessage.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().SetText(message);
 
         // Format message depending on whether message was sent by player or NPC
@@ -91,8 +92,7 @@ public class MessageScript : MonoBehaviour {
 
     private void AddOption(string message) {
         // Create new chat option and place it in the dialogue option box
-        var newOption = Instantiate(chatOptionPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-        newOption.transform.SetParent(this.gameObject.transform, false);
+        var newOption = Instantiate(chatOptionPrefab, gameObject.transform);
         newOption.transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText(message);
 
         // Make button add message on click
