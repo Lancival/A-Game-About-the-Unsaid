@@ -260,7 +260,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 230.94, y: 0}
+  m_SizeDelta: {x: 188.76, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &199755493
 MonoBehaviour:
@@ -394,16 +394,12 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'To Do List:
 
-    - Figure out how to make the Name Holder align to the
-    left but have the expander remain centered
+    - Finish in-game menu feature
 
-    - Finalize UI container hierarchy
+    - Add save/load game
+    functionality
 
-    -
-    Write a script to control dialogue/game flow
-
-    - Optional: Add easter eggs,
-    especially through clickable sprites'
+    - Add easter eggs, especially through clickable sprites'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b02a991e4027d4f60ac5592c40fbbe31, type: 2}
   m_sharedMaterial: {fileID: 1421954999582859642, guid: b02a991e4027d4f60ac5592c40fbbe31,
@@ -449,7 +445,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 190
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -473,12 +469,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 351006717}
-    characterCount: 255
+    characterCount: 132
     spriteCount: 0
-    spaceCount: 43
-    wordCount: 45
+    spaceCount: 20
+    wordCount: 22
     linkCount: 0
-    lineCount: 6
+    lineCount: 4
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -587,7 +583,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 414503132}
-        m_MethodName: ShowMenu
+        m_MethodName: OpenMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -648,6 +644,7 @@ MonoBehaviour:
   sceneName: 
   menuPrefab: {fileID: 7910255379296037258, guid: 14a921ceda75549a4869c1adee8c69f3,
     type: 3}
+  quitConfirmationPrefab: {fileID: 0}
 --- !u!1 &706683524
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,9 @@ using UnityEngine.SceneManagement;
 public class ButtonFunctions : MonoBehaviour {
 	[SerializeField] private string sceneName;
 	[SerializeField] private GameObject menuPrefab;
+	[SerializeField] private GameObject quitConfirmationPrefab;
+
+    private static GameObject menu;
 
 	public void ChangeScene() {
     	SceneManager.LoadScene(sceneName);
@@ -26,13 +29,26 @@ public class ButtonFunctions : MonoBehaviour {
     	Application.Quit();
     }
 
-    public void ShowMenu() {
-    	LogClick();
+    public void ReturnToTitle() {
+    	var menu = Instantiate(quitConfirmationPrefab, GameObject.Find("Canvas").transform);
+    	EventSystem.current.currentSelectedGameObject.transform.parent.gameObject.SetActive(false);
+    }
+
+    public void Cancel() {
+    	menu.SetActive(true);
+    	Destroy(EventSystem.current.currentSelectedGameObject.transform.parent.parent.gameObject);
+    }
+
+    public void OpenMenu() {
     	EventSystem.current.currentSelectedGameObject.GetComponent<Button>().interactable = false;
     	Settings.PAUSED = true;
-    	var menu = Instantiate(menuPrefab, GameObject.Find("Canvas").transform);
-    	//menu.transform.SetParent(GameObject.Find("Canvas").transform);
-    	//menu.transform.GetComponent<RectTransform>().Pos = new Vector3(0, 0, 0);
+    	menu = Instantiate(menuPrefab, GameObject.Find("Canvas").transform);
+    }
+
+    public void CloseMenu() {
+    	GameObject.Find("Menu Button").GetComponent<Button>().interactable = true;
+    	Settings.PAUSED = false;
+    	Destroy(EventSystem.current.currentSelectedGameObject.transform.parent.gameObject);
     }
 
     public void LogClick() {

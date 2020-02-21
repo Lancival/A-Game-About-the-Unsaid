@@ -98,7 +98,9 @@ public class Conversation : MonoBehaviour {
     	for (int i = 0; i < speech.Length; i++) {
     		if (!printing)
     			break;
-            if (!Settings.PAUSED)
+            if (Settings.PAUSED)
+                i--;
+            else
     		    dialogue.text += speech[i];
     		yield return new WaitForSeconds(dialogueSpeed);
     	}
