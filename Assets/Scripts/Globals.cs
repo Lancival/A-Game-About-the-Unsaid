@@ -13,4 +13,5 @@ static class CharacterInfo {
 static class Settings {
 	public static float DIALOGUE_SPEED = 0.03f;
 	public static bool PAUSED = false;
+	public static float AUDIO_VOLUME = 1.0f;
 }

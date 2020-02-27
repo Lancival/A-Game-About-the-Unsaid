@@ -325,6 +325,7 @@ GameObject:
   - component: {fileID: 380954752113983055}
   - component: {fileID: 5600445263645727393}
   - component: {fileID: 3853588464614920428}
+  - component: {fileID: 6204574185228987235}
   m_Layer: 5
   m_Name: Save Button
   m_TagString: Untagged
@@ -430,7 +431,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 380954752113983055}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6204574185228987235}
+        m_MethodName: OpenSaveSlots
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3853588464614920428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,6 +468,23 @@ MonoBehaviour:
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!114 &6204574185228987235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6938602778352985130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a81ab2871b8bd412aa7391f588a4fc6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
+  menuPrefab: {fileID: 0}
+  quitConfirmationPrefab: {fileID: 0}
+  saveSlotsPrefab: {fileID: 7653885809772696566, guid: a1ffac836f9004eb6a912c9d1a1832ac,
+    type: 3}
 --- !u!1 &6982422908228897162
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,6 +498,7 @@ GameObject:
   - component: {fileID: 7221319331481116596}
   - component: {fileID: 599619381897076667}
   - component: {fileID: 8988655176043725854}
+  - component: {fileID: 5951882719053680914}
   m_Layer: 5
   m_Name: Load Button
   m_TagString: Untagged
@@ -574,7 +604,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7221319331481116596}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5951882719053680914}
+        m_MethodName: OpenLoadSlots
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8988655176043725854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,6 +641,23 @@ MonoBehaviour:
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!114 &5951882719053680914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6982422908228897162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a81ab2871b8bd412aa7391f588a4fc6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
+  menuPrefab: {fileID: 0}
+  quitConfirmationPrefab: {fileID: 0}
+  saveSlotsPrefab: {fileID: 7653885809772696566, guid: a1ffac836f9004eb6a912c9d1a1832ac,
+    type: 3}
 --- !u!1 &7910255377554993879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,6 +1297,7 @@ MonoBehaviour:
   sceneName: 
   menuPrefab: {fileID: 0}
   quitConfirmationPrefab: {fileID: 0}
+  saveSlotsPrefab: {fileID: 0}
 --- !u!1 &7910255379287006963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1411,6 +1470,7 @@ MonoBehaviour:
   menuPrefab: {fileID: 0}
   quitConfirmationPrefab: {fileID: 8350161147264685243, guid: 64e82804924384234935e47083655dea,
     type: 3}
+  saveSlotsPrefab: {fileID: 0}
 --- !u!1 &7910255379296037258
 GameObject:
   m_ObjectHideFlags: 0
