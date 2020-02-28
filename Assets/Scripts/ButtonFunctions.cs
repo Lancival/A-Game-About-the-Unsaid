@@ -38,7 +38,8 @@ public class ButtonFunctions : MonoBehaviour {
     }
 
     public void Cancel() {
-    	menu.SetActive(true);
+        if (menu != null)
+    	   menu.SetActive(true);
     	Destroy(EventSystem.current.currentSelectedGameObject.transform.parent.parent.gameObject);
     }
 
@@ -70,7 +71,8 @@ public class ButtonFunctions : MonoBehaviour {
     }
 
     public void OpenSaveSlots() {
-        menu.SetActive(false);
+        if (menu != null)
+            menu.SetActive(false);
         var saveSlots = Instantiate(saveSlotsPrefab, GameObject.Find("Canvas").transform);
         for (int i = 1; i <= 3; i++) {
             saveSlots.transform.GetChild(i).GetComponent<Button>().onClick.AddListener(SaveGame);
@@ -80,12 +82,15 @@ public class ButtonFunctions : MonoBehaviour {
     }
 
     public void OpenLoadSlots() {
-        menu.SetActive(false);
+        if (menu != null)
+            menu.SetActive(false);
         var saveSlots = Instantiate(saveSlotsPrefab, GameObject.Find("Canvas").transform);
         for (int i = 1; i <= 3; i++) {
             saveSlots.transform.GetChild(i).GetComponent<Button>().onClick.AddListener(LoadGame);
             if (PlayerPrefs.HasKey("slot" + i.ToString()))
                 saveSlots.transform.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>().SetText("Save Slot 0" + i.ToString() + ": " + PlayerPrefs.GetString("slot" + i.ToString()));
+            else
+                saveSlots.transform.GetChild(i).GetComponent<Button>().interactable = false;
         }
     }
 

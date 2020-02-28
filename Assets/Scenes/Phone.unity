@@ -457,8 +457,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -720, y: 110}
-  m_SizeDelta: {x: 900, y: 1250}
+  m_AnchoredPosition: {x: -720, y: 80}
+  m_SizeDelta: {x: 890, y: 1250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &465108058
 MonoBehaviour:
@@ -603,8 +603,8 @@ MonoBehaviour:
 
     - Add icons and phone systems'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b02a991e4027d4f60ac5592c40fbbe31, type: 2}
-  m_sharedMaterial: {fileID: 1421954999582859642, guid: b02a991e4027d4f60ac5592c40fbbe31,
+  m_fontAsset: {fileID: 11400000, guid: 0124db63a67c0404688f3eb90cc496c2, type: 2}
+  m_sharedMaterial: {fileID: -1338451951826093441, guid: 0124db63a67c0404688f3eb90cc496c2,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -676,7 +676,7 @@ MonoBehaviour:
     spaceCount: 19
     wordCount: 21
     linkCount: 0
-    lineCount: 4
+    lineCount: 7
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

@@ -209,8 +209,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b02a991e4027d4f60ac5592c40fbbe31, type: 2}
-  m_sharedMaterial: {fileID: 1421954999582859642, guid: b02a991e4027d4f60ac5592c40fbbe31,
+  m_fontAsset: {fileID: 11400000, guid: 0124db63a67c0404688f3eb90cc496c2, type: 2}
+  m_sharedMaterial: {fileID: -1338451951826093441, guid: 0124db63a67c0404688f3eb90cc496c2,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -282,7 +282,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 6
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

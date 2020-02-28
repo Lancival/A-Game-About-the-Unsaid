@@ -128,8 +128,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Cancel
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b02a991e4027d4f60ac5592c40fbbe31, type: 2}
-  m_sharedMaterial: {fileID: 1421954999582859642, guid: b02a991e4027d4f60ac5592c40fbbe31,
+  m_fontAsset: {fileID: 11400000, guid: 0124db63a67c0404688f3eb90cc496c2, type: 2}
+  m_sharedMaterial: {fileID: -1338451951826093441, guid: 0124db63a67c0404688f3eb90cc496c2,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -287,8 +287,8 @@ MonoBehaviour:
     You will have to replay this
     scene!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b02a991e4027d4f60ac5592c40fbbe31, type: 2}
-  m_sharedMaterial: {fileID: 1421954999582859642, guid: b02a991e4027d4f60ac5592c40fbbe31,
+  m_fontAsset: {fileID: 11400000, guid: 0124db63a67c0404688f3eb90cc496c2, type: 2}
+  m_sharedMaterial: {fileID: -1338451951826093441, guid: 0124db63a67c0404688f3eb90cc496c2,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -360,7 +360,7 @@ MonoBehaviour:
     spaceCount: 12
     wordCount: 13
     linkCount: 0
-    lineCount: 2
+    lineCount: 4
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -549,6 +549,7 @@ MonoBehaviour:
   sceneName: 
   menuPrefab: {fileID: 0}
   quitConfirmationPrefab: {fileID: 0}
+  saveSlotsPrefab: {fileID: 0}
 --- !u!1 &8350161147264685243
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,8 +753,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Confirm
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b02a991e4027d4f60ac5592c40fbbe31, type: 2}
-  m_sharedMaterial: {fileID: 1421954999582859642, guid: b02a991e4027d4f60ac5592c40fbbe31,
+  m_fontAsset: {fileID: 11400000, guid: 0124db63a67c0404688f3eb90cc496c2, type: 2}
+  m_sharedMaterial: {fileID: -1338451951826093441, guid: 0124db63a67c0404688f3eb90cc496c2,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1014,6 +1015,7 @@ MonoBehaviour:
   sceneName: Title Screen
   menuPrefab: {fileID: 0}
   quitConfirmationPrefab: {fileID: 0}
+  saveSlotsPrefab: {fileID: 0}
 --- !u!1 &8350161149269703779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,8 +1081,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Are you sure you want to quit?
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b02a991e4027d4f60ac5592c40fbbe31, type: 2}
-  m_sharedMaterial: {fileID: 1421954999582859642, guid: b02a991e4027d4f60ac5592c40fbbe31,
+  m_fontAsset: {fileID: 11400000, guid: 0124db63a67c0404688f3eb90cc496c2, type: 2}
+  m_sharedMaterial: {fileID: -1338451951826093441, guid: 0124db63a67c0404688f3eb90cc496c2,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1152,7 +1154,7 @@ MonoBehaviour:
     spaceCount: 6
     wordCount: 7
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
