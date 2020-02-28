@@ -2300,7 +2300,7 @@ GameObject:
   - component: {fileID: 1847051836}
   - component: {fileID: 1847051835}
   m_Layer: 5
-  m_Name: Image
+  m_Name: White Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
