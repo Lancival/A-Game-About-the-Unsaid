@@ -34,9 +34,9 @@ public class Conversation : MonoBehaviour {
         character = gameObject.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
 
         if (nodes[0].getSpeakerID() == 0)
-        	ShowDialogueOptions();
-        else
         	Response();
+        else
+        	ShowDialogueOptions();
     }
 
     void Update() {
@@ -62,14 +62,20 @@ public class Conversation : MonoBehaviour {
     }
 
     private void ShowDialogueOptions() {
-    	gameObject.transform.GetChild(1).GetChild(1).GetChild(0).gameObject.SetActive(false);
-    	List<int> responses = nodes[curr].getResponseID();
-    	ChangeName(CharacterInfo.names[nodes[responses[0]].getSpeakerID()]);
-    	foreach (int responseID in responses) {
-    		var response = Instantiate(optionPrefab, gameObject.transform.GetChild(1).GetChild(1));
-			response.transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText(nodes[responseID].getText());
-			response.transform.GetComponent<Button>().onClick.AddListener(ChooseOption);
-    	}
+        List<int> responses = nodes[curr].getResponseID();
+        if (responses.Count > 1) {
+        	gameObject.transform.GetChild(1).GetChild(1).GetChild(0).gameObject.SetActive(false);
+        	ChangeName(CharacterInfo.names[nodes[responses[0]].getSpeakerID()]);
+        	foreach (int responseID in responses) {
+        		var response = Instantiate(optionPrefab, gameObject.transform.GetChild(1).GetChild(1));
+    			response.transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText(nodes[responseID].getText());
+    			response.transform.GetComponent<Button>().onClick.AddListener(ChooseOption);
+        	}
+        }
+        else {
+            curr = responses[0];
+            Response();
+        }
     }
 
     private void ChooseOption() {
@@ -104,6 +110,7 @@ public class Conversation : MonoBehaviour {
     		    dialogue.text += speech[i];
     		yield return new WaitForSeconds(dialogueSpeed);
     	}
+        printing = false;
     }
 
     // Change the name displayed by the name bar to the current speaker

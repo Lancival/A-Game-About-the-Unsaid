@@ -394,12 +394,13 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'To Do List:
 
-    - Finish in-game menu feature
+    - Finish adding dialogue and fix scene transitions
 
-    - Add save/load game
-    functionality
+    -
+    Add background art and icons
 
-    - Add easter eggs, especially through clickable sprites'
+    - Add easter eggs, especially through clickable
+    sprites'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0124db63a67c0404688f3eb90cc496c2, type: 2}
   m_sharedMaterial: {fileID: -1338451951826093441, guid: 0124db63a67c0404688f3eb90cc496c2,
@@ -469,10 +470,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 351006717}
-    characterCount: 132
+    characterCount: 149
     spriteCount: 0
-    spaceCount: 20
-    wordCount: 22
+    spaceCount: 24
+    wordCount: 25
     linkCount: 0
     lineCount: 4
     pageCount: 1
@@ -1208,7 +1209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 293644036fc6a43a685b96a5d78a8e25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  file: {fileID: 4900000, guid: ce253876e53674496ba2162b608bef27, type: 3}
+  file: {fileID: 4900000, guid: 5d06f8695398c49d99e7ad0b1fcd55bb, type: 3}
   optionPrefab: {fileID: 8234688449772801360, guid: 813ba4d7ea8e94a768a28c97f5754dbb,
     type: 3}
 --- !u!1 &1811863279

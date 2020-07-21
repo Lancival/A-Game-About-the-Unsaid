@@ -1,2 +1,24 @@
-0;0;What are we?;1
-1;1;
+0;What are we?;1
+1;I feel like we're not a hookup, but we're also not dating... We're in between. What do you see us as?;2,3
+0;I'm with you.;4
+0;I mean, we've been hanging out a lot but we haven't established any labels or boundaries.;5
+1;Yeah, we're just having fun.;7
+1;Why do we have to put a label on this? We can just hang out and have fun together.;6
+0;Yeah I guess...;7
+0;What are you doing for the rest of the week?;8
+1;Not much, are you trying to hang out?;9,10
+0;I could come over to your place?;11
+0;We should go to a museum or something like that.;12
+1;Yeah, I'm down.;14
+1;I'm tired, I was up late last night editing photos. Would you wanna just come over instead?;13
+0;Yeah, sure.;14
+0;How was the shoot by the way?;15
+1;It was alright. We'll see how the photos come out.;16
+0;What about that game I recommended? Did you get around to playing it?;17
+1;Oh, Age of the Storm? I got past the tutorial.;18
+0;You gotta stick it through. I know it's not your thing, but the PVP gets me so hyped!;19
+1;I'm not nerdy like you.;20
+0;Hey! Liking video games doesn't make me inherently nerdy. If I'm a nerd, you're an art freak.;21
+1;Alright nerd... *extends hand*;22,23
+0;*Take Miles's hand*;-1
+0;*Don't take Miles's hand*;-1
