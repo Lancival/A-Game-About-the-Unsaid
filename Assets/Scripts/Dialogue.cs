@@ -37,9 +37,10 @@ public class Dialogue {
 	public static List<Dialogue> extract(string text) {
 		List<Dialogue> nodes = new List<Dialogue>();
 		string[] lines = text.Split('\n');
-		foreach (string line in lines) {
+		for (int i = 0; i < lines.Length; i++) {
+			string line = lines[i];
 			string[] fields = line.Split(';');
-			nodes.Add(new Dialogue(int.Parse(fields[0]), int.Parse(fields[1]), fields[2], new List<int>(Array.ConvertAll(fields[3].Split(','), Convert.ToInt32))));
+			nodes.Add(new Dialogue(i, int.Parse(fields[0]), fields[1], new List<int>(Array.ConvertAll(fields[2].Split(','), Convert.ToInt32))));
 		}
 		return nodes;
 	}

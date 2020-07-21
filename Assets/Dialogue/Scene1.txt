@@ -1,69 +1,69 @@
-0;2;hey, how was your night?;1
-1;0;welp, I'm at miles's rn;2
-2;2;am I interrupting anything lolll;3,4
-3;0;omg GIRL STOP THIS;5
-4;0;no haha he's just making me pancakes;7
-5;2;:);6
-6;0;CHILLLLLL;9
-7;2;really? that's so cute;8
-8;0;no, he's fast asleep next to me lmao;9
-9;2;so...what went down?;10,11
-10;0;well, I spent the night so...;12
-11;0;I think you know what went down;12
-12;2;you know what I mean, did you talk to him about what's going on btwn you two?;13
-13;0;ugh no I haven't, it hasn't come up yet;14
-14;2;I’m telling you, if you see this as more than just hooking up, you should def talk to him;15,16
-15;0;you're right, I should talk to him;17
-16;0;idk I just feel like things take time;19
-17;2;when are you going to do it?;18
-18;0;probably the next time we hang out;21
-19;2;more than 2 months??;20
-20;0;sis I feel attacked;21
-21;2;I’m your best friend I just want to make sure you don’t get hurt;22
-22;0;Alright fine I’ll talk to him soon;23
-23;2;okay good. how have things been tho?;24
-24;0;he's so good, I feel like he's cuffing material;25
-25;2;oh yeah?;26
-26;0;yesterday we were at the beach and he was helping these kids build sandcastles and playing with them and my heart was melting;27
-27;2;When he’s good with kids...;28
-28;0;yeah they were so sad when we were leaving, I genuinely thought one of them was gonna cry;29
-29;2;it seems like you’re catching feels;30
-30;0;yeah i'm a lil stressed about that;31
-31;2;this is why you’ve gotta make your move soon;32,33
-32;0;ok ok I will;34
-33;0;aghhh are you sure?;36
-34;2;wait so was the beach thing even a date?;35
-35;0;I think it was?;38
-36;2;yeah or else he might find someone else;37
-37;0;I definitely don't want that to happen;34
-38;2;he isn't seeing anyone else right?;39
-39;0;no, at least I don't think so;40
-40;2;Would you be mad if he was?;41,42
-41;0;honestly yeah;43
-42;0;idk, we aren’t official so I guess not..? But it would feel kinda weird;43
-43;2;girl you're in so deep;44
-44;0;do you think I should ask him?;46
-45;2;yeah i got you;44
-46;2;I think you can hint at it? Or maybe steer the conversation towards it but it might be awk to flat out ask;47
-47;0;legit I’ve never been in an in between stage w someone ever, I just wanna say my feelings every 5 seconds lol;48;
-48;2;when you fall in love in 5 seconds;49
-49;0;LMAO literally me;50
-50;2;4 seconds if you guys have the same taste in music;51
-51;0;1 second if he’ll carry me in Age of the Storm;52
-52;2;what's age of the storm?;53
-53;0;the game I'm playing rn;54
-54;2;ok that one’s just you LOL;55
-55;0;hehe I know;56
-56;2;ok so tell me about him;57,58
-57;0;my lips are sealed;61
-58;0;he's in a frat, does photography, p nice?;59
-59;2;wait he’s in a frat?;60
-60;0;lol yes, he’s the opposite of my type;63
-61;2;WHAT THE HECK;62
-62;0;you're just gonna have to meet him in person;63
-63;2;you know I'm waiting until we can go on a double date;64
-64;0;omg don’t get me excited;65
-65;2;I’m just waiting on you!;66
-66;0;asjdfk MAYBE. We’ll see how things work out w miles.;67
-67;2;yes I am hopeful! Also mark just got here so I can’t talk more but send me updates ! I wanna hear more about your man;68
-68;0;girl you know I will, have fun <3;-1
+2;hey, how was your night?;1
+0;welp, I'm at miles's rn;2
+2;am I interrupting anything lolll;3,4
+0;omg GIRL STOP THIS;5
+0;no haha he's just making me pancakes;7
+2;:);6
+0;CHILLLLLL;9
+2;really? that's so cute;8
+0;no, he's fast asleep next to me lmao;9
+2;so...what went down?;10,11
+0;well, I spent the night so...;12
+0;I think you know what went down;12
+2;you know what I mean, did you talk to him about what's going on btwn you two?;13
+0;ugh no I haven't, it hasn't come up yet;14
+2;I’m telling you, if you see this as more than just hooking up, you should def talk to him;15,16
+0;you're right, I should talk to him;17
+0;idk I just feel like things take time;19
+2;when are you going to do it?;18
+0;probably the next time we hang out;21
+2;more than 2 months??;20
+0;sis I feel attacked;21
+2;I’m your best friend I just want to make sure you don’t get hurt;22
+0;Alright fine I’ll talk to him soon;23
+2;okay good. how have things been tho?;24
+0;he's so good, I feel like he's cuffing material;25
+2;oh yeah?;26
+0;yesterday we were at the beach and he was helping these kids build sandcastles and playing with them and my heart was melting;27
+2;When he’s good with kids...;28
+0;yeah they were so sad when we were leaving, I genuinely thought one of them was gonna cry;29
+2;it seems like you’re catching feels;30
+0;yeah i'm a lil stressed about that;31
+2;this is why you’ve gotta make your move soon;32,33
+0;ok ok I will;34
+0;aghhh are you sure?;36
+2;wait so was the beach thing even a date?;35
+0;I think it was?;38
+2;yeah or else he might find someone else;37
+0;I definitely don't want that to happen;34
+2;he isn't seeing anyone else right?;39
+0;no, at least I don't think so;40
+2;Would you be mad if he was?;41,42
+0;honestly yeah;43
+0;idk, we aren’t official so I guess not..? But it would feel kinda weird;43
+2;girl you're in so deep;44
+0;do you think I should ask him?;46
+2;yeah i got you;44
+2;I think you can hint at it? Or maybe steer the conversation towards it but it might be awk to flat out ask;47
+0;legit I’ve never been in an in between stage w someone ever, I just wanna say my feelings every 5 seconds lol;48;
+2;when you fall in love in 5 seconds;49
+0;LMAO literally me;50
+2;4 seconds if you guys have the same taste in music;51
+0;1 second if he’ll carry me in Age of the Storm;52
+2;what's age of the storm?;53
+0;the game I'm playing rn;54
+2;ok that one’s just you LOL;55
+0;hehe I know;56
+2;ok so tell me about him;57,58
+0;my lips are sealed;61
+0;he's in a frat, does photography, p nice?;59
+2;wait he’s in a frat?;60
+0;lol yes, he’s the opposite of my type;63
+2;WHAT THE HECK;62
+0;you're just gonna have to meet him in person;63
+2;you know I'm waiting until we can go on a double date;64
+0;omg don’t get me excited;65
+2;I’m just waiting on you!;66
+0;asjdfk MAYBE. We’ll see how things work out w miles.;67
+2;yes I am hopeful! Also mark just got here so I can’t talk more but send me updates ! I wanna hear more about your man;68
+0;girl you know I will, have fun <3;-1
