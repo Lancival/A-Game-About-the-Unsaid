@@ -27,6 +27,10 @@ public class MessageScript : MonoBehaviour {
         curr = 0;
 
         gameObject.transform.GetChild(1).gameObject.SetActive(false); // Hide the next scene button
+        while (nodes[curr].getSpeakerID() == 0) {
+            AddMessage(nodes[curr].getText(), true);
+            curr = nodes[curr].getResponseID()[0];
+        }
         StartCoroutine(AddNPCMessage()); // Start chat coroutine
     }
 

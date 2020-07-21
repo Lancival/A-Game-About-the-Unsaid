@@ -1,0 +1,27 @@
+0;*Sends Meme*;1
+1;haha lol;2
+0;I was thinking about our conversation earlier today...;3
+1;what about it;4
+0;is that how you really feel about us?;5
+1;yeah, I hope you don't hink I only care about the hookup part though;6,7
+0;yeah, ofc;8
+0;tbh I don't believe you;13
+1;yeah, i actually do like hanging out with you too;9
+0;btw you should check out this song *sends clip of song*;10
+1;that's sick;11,12
+0;aw I'm glad you liked it. What are you up to;18
+0;I thought of you when I heard it;24
+1;?;14,16
+0;actually nevermind, sorry I got out of hand;8
+1;okay lol, i actually do like hanging out with you;9
+0;I just don't get that vibe from you;17
+1;i actually do like hanging out with you;9
+1;I'm packing for my retreat;19
+0;literally what do people do on these retreats besides party;20
+1;all the officers are going so I kinda have to go too;21,22
+0;I'll miss you;23
+0;well, hope you have fun;23
+1;yeah, it'll be nice to not think about school for a bit;25
+1;haha thanks;25
+0;are we still hanging out later today?;26
+1;roll thru;-1
