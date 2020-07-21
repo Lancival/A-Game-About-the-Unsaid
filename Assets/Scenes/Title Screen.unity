@@ -2259,7 +2259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81ab2871b8bd412aa7391f588a4fc6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Scene 0
+  sceneName: Scene 1
   menuPrefab: {fileID: 0}
   quitConfirmationPrefab: {fileID: 0}
   saveSlotsPrefab: {fileID: 0}

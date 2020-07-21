@@ -26,7 +26,8 @@ public class MessageScript : MonoBehaviour {
         nodes = Dialogue.extract(file.text);
         curr = 0;
 
-        StartCoroutine(AddNPCMessage());
+        gameObject.transform.GetChild(1).gameObject.SetActive(false); // Hide the next scene button
+        StartCoroutine(AddNPCMessage()); // Start chat coroutine
     }
 
     private IEnumerator ScrollToBottom() {
@@ -53,13 +54,19 @@ public class MessageScript : MonoBehaviour {
         StartCoroutine(ScrollToBottom());
     }
 
+    // Delete all non-placeholder messages
+    private void DeleteOptions() {
+        foreach (Transform child in gameObject.transform)
+            if (child.gameObject.name != "Wait" && child.gameObject.name != "NextScene")
+                GameObject.Destroy(child.gameObject);
+    }
+
     // Send a series of 1 or more NPC messages, with a delay between each NPC message
     private IEnumerator AddNPCMessage() {
         gameObject.transform.GetChild(0).gameObject.SetActive(true); // Add waiting for messages placeholder
+
         // Delete all other buttons
-        foreach (Transform child in gameObject.transform)
-            if (child.gameObject.name != "Wait")
-                GameObject.Destroy(child.gameObject);
+        DeleteOptions();
 
         while (nodes[nodes[curr].getResponseID()[0]].getSpeakerID() > 0) {
         	yield return new WaitForSeconds(1); // Wait for 1 second between message
@@ -78,12 +85,15 @@ public class MessageScript : MonoBehaviour {
     private void ChooseOption() {
         Button button = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
         AddMessage(button.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text, true);
-        curr = nodes[curr].getResponseID()[button.transform.GetSiblingIndex() - 1];
+        curr = nodes[curr].getResponseID()[button.transform.GetSiblingIndex() - 2];
 
         if (nodes[curr].getResponseID()[0] == 0)
             AddOptions();
-        else if (nodes[curr].getResponseID()[0] < 0)
-        	return;
+        else if (nodes[curr].getResponseID()[0] < 0) {
+            Debug.Log("Test");
+            gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            DeleteOptions();
+        }
         else {
             curr = nodes[curr].getResponseID()[0];
             StartCoroutine(AddNPCMessage());
@@ -100,8 +110,9 @@ public class MessageScript : MonoBehaviour {
     }
 
     private void AddOptions() {
-        gameObject.transform.GetChild(0).gameObject.SetActive(false); // Disable waiting for messages placeholder
+        // Disable waiting for messages button
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
         foreach (int option in nodes[curr].getResponseID())
-            	AddOption(nodes[option].getText());
+            AddOption(nodes[option].getText());
     }
 }
