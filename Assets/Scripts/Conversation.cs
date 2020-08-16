@@ -14,24 +14,30 @@ public class Conversation : MonoBehaviour {
 	[SerializeField] private GameObject optionPrefab; // Button w/ dialogue option to be instantiated
 	private List<Dialogue> nodes; // Extracted dialogue from source file
 	private int curr; // Number of current dialogue node
+
+    // TODO: Move to globals settings
 	private float dialogueSpeed = 0.03f; // time interval in seconds between characters being printed on screen
 
-	private TextMeshProUGUI dialogue;
-	private TextMeshProUGUI character;
+	private TextMeshProUGUI dialogue; // Text box which contains dialogue
+	private TextMeshProUGUI character; // Text box which contains name of the person speaking
+    private GameObject nextScene; // Button that moves to the next scene
 
 	private bool printing = false;
 
     void Start() {
         if (optionPrefab == null)
-        	Debug.Log("Please provide a prefab to the Conversation script!");
+        	Debug.Log("Error: Please provide a prefab to the Conversation script!");
         if (file == null)
-        	Debug.Log("Please provide a dialogue source file to the Conversation script!");
+        	Debug.Log("Error: Please provide a dialogue source file to the Conversation script!");
 
         nodes = Dialogue.extract(file.text);
         curr = 0;
 
         dialogue = gameObject.transform.GetChild(1).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
         character = gameObject.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
+        nextScene = gameObject.transform.GetChild(1).GetChild(1).GetChild(1).gameObject;
+
+        nextScene.SetActive(false);
 
         if (nodes[0].getSpeakerID() == 0)
         	Response();
@@ -50,7 +56,7 @@ public class Conversation : MonoBehaviour {
         	}
         	else if (Input.GetKeyDown(KeyCode.Return) == true && nodes[curr].getResponseID()[0] >= 0) {
         		if (nodes[nodes[curr].getResponseID()[0]].getSpeakerID() == 0) {
-        			if (gameObject.transform.GetChild(1).GetChild(1).childCount <= 1)
+        			if (gameObject.transform.GetChild(1).GetChild(1).childCount <= 2)
         				ShowDialogueOptions();
         		}
         		else {
@@ -79,17 +85,21 @@ public class Conversation : MonoBehaviour {
     }
 
     private void ChooseOption() {
-    	Transform button = EventSystem.current.currentSelectedGameObject.transform;
-    	curr = nodes[curr].getResponseID()[button.GetSiblingIndex() - 1];
+        if (!Settings.PAUSED) {
+        	Transform button = EventSystem.current.currentSelectedGameObject.transform;
+        	curr = nodes[curr].getResponseID()[button.GetSiblingIndex() - 2];
 
-    	Response();
+        	Response();
 
-    	foreach (Transform child in button.parent) {
-            if (child.gameObject.name != "Dialogue")
-                GameObject.Destroy(child.gameObject);
-            else
-            	child.gameObject.SetActive(true);
-    	}
+        	foreach (Transform child in button.parent) {
+                if (child.gameObject.name == "Dialogue")
+                    child.gameObject.SetActive(true);
+                else if (child.gameObject.name == "Next Scene")
+                    continue;
+                else
+                	GameObject.Destroy(child.gameObject);
+        	}
+        }
     }
 
     private void Response() {
@@ -111,6 +121,9 @@ public class Conversation : MonoBehaviour {
     		yield return new WaitForSeconds(dialogueSpeed);
     	}
         printing = false;
+
+        if (nodes[curr].getResponseID()[0] == -1)
+            nextScene.SetActive(true);
     }
 
     // Change the name displayed by the name bar to the current speaker

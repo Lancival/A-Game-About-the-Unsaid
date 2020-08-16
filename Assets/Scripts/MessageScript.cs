@@ -16,13 +16,15 @@ public class MessageScript : MonoBehaviour {
     private int curr; // ID # of current dialogue node
 
     private const int MESSAGE_PADDING = 200; // How much to left or right pad a message
+    private const int DELAY = 2; // Number of seconds to wait between messages
+    // TODO: Get DELAY from settings
 
     private Color32 PLAYER_COLOR = new Color32(254, 215, 177, 255); // Light orange color
     private Color32 NPC_COLOR = new Color32(173, 216, 230, 255); // Light blue color
 
     void Start() {
         if (chatMessagePrefab == null) 
-            Debug.Log("Please assign the chat message prefab to MessageScript!");
+            Debug.Log("Error: Please assign the chat message prefab to MessageScript!");
         nodes = Dialogue.extract(file.text);
         curr = 0;
 
@@ -72,35 +74,46 @@ public class MessageScript : MonoBehaviour {
         // Delete all other buttons
         DeleteOptions();
 
-        while (nodes[nodes[curr].getResponseID()[0]].getSpeakerID() > 0) {
-        	yield return new WaitForSeconds(1); // Wait for 1 second between message
+        while (nodes[curr].getResponseID()[0] >= 0 && nodes[nodes[curr].getResponseID()[0]].getSpeakerID() > 0) {
+        	yield return new WaitForSeconds(DELAY);
             //yield return new WaitForSeconds(nodes[curr].getText().Length / 100 + 1); // Use length of previous message (more convenient for reader)? Or the next message (more realistic)?
-            AddMessage(nodes[curr].getText(), false);
+            do {
+                AddMessage(nodes[curr].getText(), false);
+            } while (Settings.PAUSED);
             curr = nodes[curr].getResponseID()[0];
         }
+
         if (nodes[curr].getResponseID()[0] != 0) {
-            yield return new WaitForSeconds(2);
+            do {
+                yield return new WaitForSeconds(DELAY);
+            } while (Settings.PAUSED);
             AddMessage(nodes[curr].getText(), false);
+        }
+        if (nodes[curr].getResponseID()[0] == -1) {
+            gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            yield break;
         }
 
         AddOptions();
     }
 
     private void ChooseOption() {
-        Button button = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
-        AddMessage(button.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text, true);
-        curr = nodes[curr].getResponseID()[button.transform.GetSiblingIndex() - 2];
+        if (!Settings.PAUSED) {
+            Button button = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
+            AddMessage(button.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text, true);
+            curr = nodes[curr].getResponseID()[button.transform.GetSiblingIndex() - 2];
 
-        if (nodes[curr].getResponseID()[0] == 0)
-            AddOptions();
-        else if (nodes[curr].getResponseID()[0] < 0) {
-            Debug.Log("Test");
-            gameObject.transform.GetChild(1).gameObject.SetActive(true);
-            DeleteOptions();
-        }
-        else {
-            curr = nodes[curr].getResponseID()[0];
-            StartCoroutine(AddNPCMessage());
+            if (nodes[curr].getResponseID()[0] == 0)
+                AddOptions();
+            else if (nodes[curr].getResponseID()[0] < 0) {
+                gameObject.transform.GetChild(1).gameObject.SetActive(true);
+                DeleteOptions();
+            }
+            else {
+                curr = nodes[curr].getResponseID()[0];
+                StartCoroutine(AddNPCMessage());
+            }
         }
     }
 
