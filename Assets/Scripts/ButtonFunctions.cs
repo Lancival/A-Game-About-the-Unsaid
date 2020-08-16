@@ -76,8 +76,10 @@ public class ButtonFunctions : MonoBehaviour {
         var saveSlots = Instantiate(saveSlotsPrefab, GameObject.Find("Canvas").transform);
         for (int i = 1; i <= 3; i++) {
             saveSlots.transform.GetChild(i).GetComponent<Button>().onClick.AddListener(SaveGame);
-            if (PlayerPrefs.HasKey("slot" + i.ToString()))
+            if (PlayerPrefs.HasKey("slot" + i.ToString()) && PlayerPrefs.GetString("slot" + i.ToString()) != "Scene 0")
                 saveSlots.transform.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>().SetText("Save Slot 0" + i.ToString() + ": " + PlayerPrefs.GetString("slot" + i.ToString()));
+            else
+                saveSlots.transform.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>().SetText("Save Slot 0" + i.ToString());
         }
     }
 
@@ -87,7 +89,8 @@ public class ButtonFunctions : MonoBehaviour {
         var saveSlots = Instantiate(saveSlotsPrefab, GameObject.Find("Canvas").transform);
         for (int i = 1; i <= 3; i++) {
             saveSlots.transform.GetChild(i).GetComponent<Button>().onClick.AddListener(LoadGame);
-            if (PlayerPrefs.HasKey("slot" + i.ToString()))
+
+            if (PlayerPrefs.HasKey("slot" + i.ToString()) && PlayerPrefs.GetString("slot" + i.ToString()) != "Scene 0")
                 saveSlots.transform.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>().SetText("Save Slot 0" + i.ToString() + ": " + PlayerPrefs.GetString("slot" + i.ToString()));
             else
                 saveSlots.transform.GetChild(i).GetComponent<Button>().interactable = false;
