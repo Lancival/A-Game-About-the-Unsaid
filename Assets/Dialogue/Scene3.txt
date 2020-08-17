@@ -1,4 +1,4 @@
-0;*Sends Meme*;1
+0;<i>June sends a meme too hilarious to display here.</i>;1
 1;haha lol;2
 0;I was thinking about our conversation earlier today...;3
 1;what about it;4
@@ -7,7 +7,7 @@
 0;yeah, ofc;8
 0;tbh I don't believe you;13
 1;yeah, i actually do like hanging out with you too;9
-0;btw you should check out this song *sends clip of song*;10
+0;btw you should check out this song <i>June sends a song clip.</i>;10
 1;that's sick;11,12
 0;aw I'm glad you liked it. What are you up to;18
 0;I thought of you when I heard it;24

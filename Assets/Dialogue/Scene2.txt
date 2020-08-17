@@ -19,6 +19,6 @@
 0;You gotta stick it through. I know it's not your thing, but the PVP gets me so hyped!;19
 1;I'm not nerdy like you.;20
 0;Hey! Liking video games doesn't make me inherently nerdy. If I'm a nerd, you're an art freak.;21
-1;Alright nerd... *extends hand*;22,23
-0;*Take Miles's hand*;-1
-0;*Don't take Miles's hand*;-1
+1;Alright nerd... <i>Miles extends his hand.</i>;22,23
+0;<i>Take Miles's hand</i>;-1
+0;<i>Don't take Miles's hand</i>;-1

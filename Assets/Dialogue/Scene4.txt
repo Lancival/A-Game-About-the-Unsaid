@@ -1,0 +1,90 @@
+0;I like your record player!;1
+1;Yeah, my dad gave it to me.;2
+0;In another life, I think I could have been a set designer for movies. I like how you can turn rooms into stories.;3
+1;For me, I'd be the guy who picks the songs in movies.;4
+0;You would just make the entire movie music from <i>Tangerine</i>!;5
+1;I heard he's coming to town soon.;6
+0;You should go.;7
+0;You know, I love your room, it feels so lived in.;8
+1;Is that just a nice way of saying I need to do some cleaning up?;9,10
+0;Maybe...;11
+0;Actually, no. It's really cozy in here.;11
+1;Do you wanna turn the lights off?;12
+0;Wait, no. I like talking right now.;13
+1;Sure. Do you want to ask each other questions?;14,15
+0;Okay, I'll start: What is your favorite flower?;16
+0;Okay, I'll start: Who would you invite to a dinner party, living or dead?;21
+1;This is such a girly question.;17
+0;Just answer the fucking question.;18
+1;Orchids... what about you?;19
+0;Hey, no repeating questions!;20
+1;Fine, uh... what's your favorite video game?;24
+1;Ansel Adams. He pioneered his own photography style. That's what I want to do for portrait photography.;22
+0;I feel like I oculd have guessed your answer.;23
+1;My turn, what's your favorite video game?;24
+0;It's a 2D sidescroller about a girl who comes home from college, only to discover that her hometown and her childhood friends have all changed.;25
+1;Ah, I see.;26
+0;Do you believe in soulmates?;27
+1;I feel like it's hard to differentiate between your soulmate and someone you just really like. I guess I don't think there's just one person for you.;28
+0;I want to believe in soulmates, but I don't think they exist either. Okay, your turn.;29
+1;<i>Miles sighs.</i> If you could eat one food for the rest of your life, which would it be?;30
+0;I really like soon tofu, it's this spicy korean broth with tofu and toppings. Although I think by only eating spicy food, my digestion might hate me.;31
+1;I've never had soon tofu before. It sounds good.;32
+0;Where would you rank ramen, udon, and pho?;33
+1;Pho-;34
+0;That's just wrong to start with pho!;35
+1;Do you want me to answer the question?;36,37
+0;If you're going to answer pho, I'm not so sure.;38
+0;Sure.;40
+1;June?;39
+0;Okay, fine. Go for it.;40
+1;Pho, udon, ramen. Would you rather have people be truthful to you and let it hurt, or have them lie to you?;41
+0;I think I'd have to hear the truth, even if I hated it. If you could be proficient at something, what would it be?;42
+1;Photography!;43
+0;Somthing you aren't <i>already</i> good at.;44
+1;I've always wanted to learn how to produce music. Singers are nothing without producers to make their songs. What do you like most about me?;45
+0;That's the question you want to ask?;46
+1;This was your idea, so I-;47,48
+0;I like that you take me seriously. I feel like a lot of people brush off what I say cause they see me as too loud and excited, but you actually listen to what I have to say.;49
+0;Your hair is pretty nice.;49
+1;Thank you.;50,51
+0;What's something you look for in a girl?;52
+0;If you could see any artist in a concert, which would it be, dead or alive?;54
+1;I like it when a girl doesn't take herself so seriously. I feel like there's so much politics when it comes to dating, so I like a girl who doesn't get so caught up in that.;53
+0;Yeah, I could see that for you.;59
+1;I've always wanted to see Father John Misty.;55
+0;Really? You like him that much?;56
+1;Ever since you added it to one of your playlists, I've been listening nonstop.;57
+0;I didn't peg you as someone who likes sappy love music.;58
+1;I don't either, but I think my inner sad boy likes it.;59
+1;If you started a business what would it be?;60,61
+0;I feel like I would enjoy doing a flower shop, so I could be there for peoples' happiest moments.;62
+0;I would make peoples' dating profiles. I'd call it <i>I Will Get You Laid</i>.;67
+1;That's such a you answer.;63
+0;Like, I don't think I could be a therapist because it'd be too emotionally draining, so this is my happy medium. I'd want to be one of those bougie flower shops that people book for their wedding. That's how you milk people for their money.;64
+1;You're rediculous.;65
+0;Rich. You meant rich.;66
+1;If you say so, June.;72
+1;<i>I Will Get You Laid</i>? Really?;68
+0;I bet you that if we hadn't met, you would be my first customer.;69
+1;Yeah, right.;70
+0;I could help single guys worldwide. Now that I'm thinking about it, maybe I'm really onto something.;71
+1;Maybe you are, but don't expect me to be your customer.;72
+0;What's your favorite photo you've ever taken?;73
+1;Right now I have one, but I can't tell it to you yet.;74
+0;Why not?;75
+1;I just can't tell you.;76
+0;You know, the point of these questions is for you to answer them.;77
+1;I'll tell you that it's of someone I met somewhat recently.;78
+0;Who is it?;79
+1;I'll show the photo to you soon.;80
+0;How are you going to leave me hanging like that?;81
+1;I promise.;82
+0;Is it of that band that you emailed?;83
+1;No.;84
+0;Was it at your sister's friend's wedding?;85
+1;Be patient, okay?;86
+0;Alright...;87
+1;I'm tired of answering questions.;88
+0;Okay, what do you want to do?;89
+1;I'm thinking we...;-1
